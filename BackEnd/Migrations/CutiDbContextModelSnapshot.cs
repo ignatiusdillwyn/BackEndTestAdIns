@@ -52,16 +52,11 @@ namespace BackEnd.Migrations
                     b.Property<long>("UserId")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("PermohonanCutis");
+                    b.ToTable("Cuti");
                 });
 
             modelBuilder.Entity("BackEnd.Models.CutiRemaining", b =>
@@ -83,7 +78,7 @@ namespace BackEnd.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("JatahCutis");
+                    b.ToTable("CutiRemaining");
                 });
 
             modelBuilder.Entity("BackEnd.Models.User", b =>

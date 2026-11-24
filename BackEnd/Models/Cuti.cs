@@ -15,10 +15,6 @@ namespace BackEnd.Models
         public User? User { get; set; }
 
         [Required]
-        [MaxLength(50)]
-        public string Username { get; set; } = string.Empty;
-
-        [Required]
         public DateTime StartDate { get; set; }
 
         [Required]

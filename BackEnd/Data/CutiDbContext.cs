@@ -10,8 +10,8 @@ namespace BackEnd.Data
         }
 
         public DbSet<User> Users { get; set; }
-        public DbSet<CutiRemaining> JatahCutis { get; set; }
-        public DbSet<Cuti> PermohonanCutis { get; set; }
+        public DbSet<CutiRemaining> CutiRemaining { get; set; }
+        public DbSet<Cuti> Cuti { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
