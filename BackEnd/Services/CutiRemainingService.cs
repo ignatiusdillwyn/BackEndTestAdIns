@@ -22,7 +22,8 @@ namespace BackEnd.Services
         }
         public async Task<CutiRemaining?> GetByEmployeeIdAsync(long employeeId)
         {
-            CutiRemaining cutiRemaining =  await _cutiRemainingRepository.GetByIdAsync(employeeId);
+            List<CutiRemaining> listCutiRemainings =  await _cutiRemainingRepository.GetAllAsync("User");
+            CutiRemaining cutiRemaining = listCutiRemainings.FirstOrDefault(lcr => lcr.UserId == employeeId); 
             if (cutiRemaining == null) return null;
             return cutiRemaining;
         }

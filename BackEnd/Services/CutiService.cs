@@ -11,13 +11,16 @@ namespace BackEnd.Services
     public class CutiService : ICutiService
     {
         private readonly IRepository<Cuti> _cutiRepository;
+        private readonly IRepository<CutiRemaining> _cutiRemainingRepository;
         private readonly ILogger<CutiService> _logger;
 
         public CutiService(
             IRepository<Cuti> cutiRepository,
+            IRepository<CutiRemaining> cutiRemainingRepository,
             ILogger<CutiService> logger)
         {
             _cutiRepository = cutiRepository;
+            _cutiRemainingRepository = cutiRemainingRepository;
             _logger = logger;
         }
 
