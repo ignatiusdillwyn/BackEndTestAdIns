@@ -118,16 +118,13 @@ namespace BackEnd.Services
 
         public async Task<List<Cuti>> GetAllCutiAsync()
         {
-            return await _cutiRepository.GetAllAsync();
+            return await _cutiRepository.GetAllAsync("User");
         }
 
         public async Task<List<Cuti>?> GetAllCutiByEmployeeIdAsync(long employeeId)
         {
             List<Cuti> listCutis = await _cutiRepository.GetAllAsync("User");
             listCutis = listCutis.Where(lc => lc.UserId == employeeId).ToList();
-            if (listCutis.Count == 0) { 
-                return null;
-            }
             return listCutis;
         }
 

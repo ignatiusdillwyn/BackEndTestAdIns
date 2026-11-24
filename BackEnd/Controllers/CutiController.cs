@@ -35,7 +35,7 @@ namespace BackEnd.Controllers
             return Ok(response);
         }
 
-        [HttpGet("/getAllCutiByEmployeeId")]
+        [HttpGet("getAllCutiByEmployeeId")]
         public async Task<IActionResult> GetAllCutiByEmployeeId()
         {
             long userId = GetUserId();
