@@ -20,14 +20,8 @@ namespace BackEnd.Controllers
             _cutiService = cutiService;
         }
 
-        private long GetUserId()
-        {
-            long userId = long.Parse(User.FindFirst("userId")!.Value);
-            return userId;
-        }
-
         [HttpGet]
-        [Authorize(Roles = "Manager")]
+        [Authorize]
         public async Task<IActionResult> GetAll()
         {
             List<Cuti> cutiList = await _cutiService.GetAllCutiAsync();
@@ -131,6 +125,12 @@ namespace BackEnd.Controllers
             {
                 throw;
             }
+        }
+
+        private long GetUserId()
+        {
+            long userId = long.Parse(User.FindFirst("userId")!.Value);
+            return userId;
         }
 
 
